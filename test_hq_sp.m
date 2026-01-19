@@ -90,6 +90,15 @@ fprintf('\n');
 %%
 psnr_sp = psnr(I0(13:end-12,13:end-13,:),min(1,max(0,S(13:end-12,13:end-13,:))))
 figure,imshow([I S]),title(['semi-sparsity smoothing results (psnr: ', num2str(psnr_sp) ')'])
-figure,plot(errs)
+%% figure,plot(errs)
+h = figure;
+plot(errs,'LineWidth',1.5);
+xlabel('Iteration');
+ylabel('MSE');
+title('Convergence Curve (MSE vs Iteration)');
+grid on;
 
-imwrite(S, './strip_semi_sparsity_res.png')
+exportgraphics(h,'./output/strip_semi_sparsity_err_plot.png','Resolution',300);
+imwrite(I0, './output/strip_semi_sparsity_gt.png')
+imwrite(I, './output/strip_semi_sparsity_noise.png')
+imwrite(S, './output/strip_semi_sparsity_res.png')
