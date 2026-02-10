@@ -98,7 +98,7 @@ ylabel('MSE');
 title('Convergence Curve (MSE vs Iteration)');
 grid on;
 
-exportgraphics(h,'./output/strip_semi_sparsity_err_plot.png','Resolution',300);
-imwrite(I0, './output/strip_semi_sparsity_gt.png')
-imwrite(I, './output/strip_semi_sparsity_noise.png')
-imwrite(S, './output/strip_semi_sparsity_res.png')
+exportgraphics(h,'./output(demo_implementation)/strip_semi_sparsity_err_plot.png','Resolution',300);
+imwrite(I0, './output(demo_implementation)/strip_semi_sparsity_gt.png')
+imwrite(I, './output(demo_implementation)/strip_semi_sparsity_noise.png')
+imwrite(S, './output(demo_implementation)/strip_semi_sparsity_res.png')
