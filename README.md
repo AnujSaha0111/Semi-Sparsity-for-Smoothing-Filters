@@ -1,5 +1,5 @@
 # 📘 Semi-Sparsity for Smoothing Filters — Complete Paper Reimplementation
-
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/AnujSaha0111/Semi-Sparsity-for-Smoothing-Filters)
 ## 🔍 Overview
 
 This repository contains a **complete reimplementation and validation** of the research paper:
