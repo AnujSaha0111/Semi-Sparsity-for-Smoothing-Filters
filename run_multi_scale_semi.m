@@ -5,23 +5,17 @@ close all;
 I0 = im2double(imread('strip_gt.png'));
 I  = im2double(imread('strip_noise.png'));
 
-% ===============================
-% Coarse Level
-% ===============================
+% coarse level (downsampled)
 I_down = imresize(I, 0.5);
 
 S_coarse = semi_sparsity_core(I_down, 1);
 
 S_coarse_up = imresize(S_coarse, [size(I,1) size(I,2)]);
 
-% ===============================
-% Fine Level (Coarse Initialization)
-% ===============================
+% fine level (coarse initialization)
 S_multi = semi_sparsity_core(I, 1, S_coarse_up);
 
-% ===============================
-% PSNR
-% ===============================
+% psnr calculation
 psnr_val = psnr( ...
     I0(13:end-12,13:end-12,:), ...
     min(1,max(0,S_multi(13:end-12,13:end-12,:))) ...
